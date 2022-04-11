@@ -2,11 +2,12 @@ import { FormControl, Select, MenuItem, InputLabel } from '@mui/material'
 import React from 'react'
 import InfoBoxs from './InfoBoxs';
 
+
 export default function Nav () {
 
     let [countries, setCountries] = React.useState([]);
+    let [defultCountry, setDefultCountry] = React.useState('WorldWide');
     let [countryData, setCountryData] = React.useState({});
-
 
     //fetching data APIs
     React.useEffect(
@@ -34,6 +35,7 @@ export default function Nav () {
 
     let OncountryChange = (e) => {
         let countryID = e.target.value;
+        setDefultCountry (countryID); 
         let url = `https://corona.lmao.ninja/v3/covid-19/countries/${countryID}`;
         let getcountryInfoDate = async () => {
             await fetch (url)
@@ -52,14 +54,15 @@ export default function Nav () {
         }
         getcountryInfoDate ();
     }
-  console.log(countryData);
+
     return (
         <>
+        
             <div className='Nav__container'>
                 <h1>Covid-19 Tracker</h1>
                     <FormControl className = 'Nav__dropSelector'>
                         <InputLabel> Country </InputLabel>
-                        <Select label = 'country' onChange = {OncountryChange}>
+                        <Select value = {defultCountry} label = 'Country' onChange = {OncountryChange}>
                         <MenuItem value = 'WorldWide'>WorldWide</MenuItem>
                         {
                             countries.map (country => <MenuItem totalCases = {country.totalCases} value = {country.value}>{country.name}</MenuItem>)
@@ -68,6 +71,7 @@ export default function Nav () {
                     </FormControl>
             </div>
 
+                 
             <div className='InfoBoxs__Content'>
                 <InfoBoxs 
                 Title = 'CoronaVirus Cases'
@@ -85,6 +89,10 @@ export default function Nav () {
                 TotalCases = {countryData.TotalDeaths}
                 />     
             </div>
+      
+            
+
+            
         </>
     )
 }

@@ -1,2 +1,1 @@
-# to - do APP
-
+# Corona Virus Tracking app
