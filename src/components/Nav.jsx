@@ -1,6 +1,7 @@
 import { FormControl, Select, MenuItem, InputLabel } from '@mui/material'
 import React from 'react'
 import InfoBoxs from './InfoBoxs';
+import Table from './Table';
 
 
 export default function Nav () {
@@ -87,12 +88,16 @@ export default function Nav () {
                 Title = 'Death Cases'
                 CurrentCases = {countryData.TodayDeaths}
                 TotalCases = {countryData.TotalDeaths}
-                />     
+                />  
+                
+                <div className = 'Table__Container'>
+                    <h4>Total live cases</h4>
+                    <Table Listed = {countries}/>
+                </div>
             </div>
-      
-            
 
             
+        
         </>
     )
 }
