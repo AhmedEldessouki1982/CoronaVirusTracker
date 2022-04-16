@@ -91,7 +91,6 @@ export default function Nav () {
                 />  
                 
                 <div className = 'Table__Container'>
-                    <h4>Total live cases</h4>
                     <Table Listed = {countries}/>
                 </div>
             </div>

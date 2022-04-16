@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(231, 226, 219);
+  background-color: rgb(236, 222, 203);
 }
 
 .Nav__container {
@@ -21,7 +21,7 @@ body {
 .InfoBoxs__Content {
   display: flex;
   position: absolute;
-  left: 5rem;
+  left: 10rem;
   justify-content:center;
   margin-top: 25px;
 }
@@ -32,12 +32,15 @@ body {
 }
 
 .Table__Container {
+  display: flex;
+
   height: 440px;
   width: 415px;
-  overflow: auto;
+  overflow: scroll;
   float: left;
   position: relative;
   margin-left: -5px;
+  scrollbar-width: thin;
 }
 
 .Table__conntry {
@@ -46,7 +49,7 @@ body {
   height: 600px;
 }
 
-.InfoBoxs__Card tr:nth-child(even) {
+.Table__conntry tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
