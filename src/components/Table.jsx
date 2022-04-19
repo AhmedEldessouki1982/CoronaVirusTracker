@@ -1,17 +1,18 @@
 import React from 'react';
+import Sorting from '../utils/Sorting';
 
 export default function Table (props) {
-    console.log(props.Listed);
+    let SortedList = Sorting (props.Listed);
     return (
         <>
             <table className = 'Table__conntry'>
                 {
-                    props.Listed.map (
-                        place => 
+                    SortedList.map (
+                        (place,index) => 
                             (
-                                <tr>
+                                <tr key = {index}>
                                     <td>{place.name}</td>
-                                    <td>{place.totalCases}</td>
+                                    <td>{place.CasesTotal}</td>
                                 </tr>
                             )
                     )

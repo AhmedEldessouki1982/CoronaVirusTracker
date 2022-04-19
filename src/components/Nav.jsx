@@ -3,7 +3,6 @@ import React from 'react'
 import InfoBoxs from './InfoBoxs';
 import Table from './Table';
 
-
 export default function Nav () {
 
     let [countries, setCountries] = React.useState([]);
